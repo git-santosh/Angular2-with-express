@@ -21,6 +21,7 @@ CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
         template: "<h2>Courses</h2>\n    {{title}}\n    <ul>\n        <li *ngFor=\"let course of courses\">\n            {{course}}\n        </li>\n    </ul>",
+        styles: ["h2{ color:red;"],
         providers: [course_service_1.CourseService]
     }),
     __metadata("design:paramtypes", [course_service_1.CourseService])

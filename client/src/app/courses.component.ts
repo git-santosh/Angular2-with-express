@@ -9,6 +9,7 @@ import { CourseService } from "./course.service";
             {{course}}
         </li>
     </ul>`,
+    styles:[`h2{ color:red;`],
     providers:[CourseService]
 })
 export class CoursesComponent {

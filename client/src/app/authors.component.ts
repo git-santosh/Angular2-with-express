@@ -6,6 +6,7 @@ import { AuthorService } from "./author.service";
     <ul>
         <li *ngFor="let author of authors"> {{author}} </li>
     </ul>`,
+    styles:[`h2{ color:orange;}`],
     providers :[AuthorService]
 })
 export class AuthorsComponent{

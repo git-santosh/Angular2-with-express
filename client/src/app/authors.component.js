@@ -20,6 +20,7 @@ AuthorsComponent = __decorate([
     core_1.Component({
         selector: 'authors',
         template: "<h2>Authors </h2>\n    <ul>\n        <li *ngFor=\"let author of authors\"> {{author}} </li>\n    </ul>",
+        styles: ["h2{ color:orange;}"],
         providers: [author_service_1.AuthorService]
     }),
     __metadata("design:paramtypes", [author_service_1.AuthorService])
