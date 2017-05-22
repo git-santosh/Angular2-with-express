@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
-import { AuthorsComponent } from "./authors.component";
+
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>
+  template: `
+  <div class="col-sm-4">
+    <h1>Hello {{name}}</h1>
     <courses></courses> 
-    <authors></authors>`
+    <authors></authors>
+  </div>
+  
+  <div class="col-sm-6" style="margin-top:11%;">
+    <img [src]="imgLink" class="thumbnail">
+  </div>
+  `
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent  { 
+  name = 'Angular'; 
+public imgLink ="http://lorempixel.com/600/300";
+}

@@ -20,7 +20,7 @@ var CoursesComponent = (function () {
 CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
-        template: "<h2>Courses</h2>\n    {{title}}\n    <ul>\n        <li *ngFor=\"let course of courses\">\n            {{course}}\n        </li>\n    </ul>",
+        template: "<div class=\"container\">\n        <div class=\"row\">\n       \n            \n            <div class=\"col-sm-2\">\n            {{title}}\n                 <h2>Course </h2>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let course of courses\"> {{course}} </li>\n                 </ul>\n            </div>    \n        </div> \n    </div>",
         styles: ["h2{ color:red;"],
         providers: [course_service_1.CourseService]
     }),
