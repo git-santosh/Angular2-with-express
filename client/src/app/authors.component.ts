@@ -3,20 +3,16 @@ import { AuthorService } from "./author.service";
 @Component({
     selector:'authors',
     template : `
-    <div class="container">
+    
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-md-6">
                  <h2>Authors </h2>
                  <ul class="list-group">
                     <li class="list-group-item" *ngFor="let author of authors"> {{author}} </li>
                  </ul>
-            </div>
-           
-                  
-               
-               
+            </div>    
         </div> 
-    </div>`,
+    `,
     styles:[`h2{ color:orange;}`],
     providers :[AuthorService]
 })

@@ -27,7 +27,7 @@ mongoose.connect(DB,function(err){
     }
 });
 
-app.set('views',path.join(__dirname,'client/views'));
+app.set('views',path.join(__dirname,'client/src/views'));
 app.set('view engine','ejs');
 app.engine('html',require('ejs').renderFile);
 app.use(express.static(path.join(__dirname,'client')));

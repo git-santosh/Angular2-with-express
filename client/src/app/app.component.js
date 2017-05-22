@@ -9,14 +9,16 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.name = 'Angular';
-        this.imgLink = "http://lorempixel.com/600/300";
+        this.imgLink = "http://lorempixel.com/700/310";
+        this.custom = true;
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <div class=\"col-sm-4\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n    <authors></authors>\n  </div>\n  \n  <div class=\"col-sm-6\" style=\"margin-top:11%;\">\n    <img [src]=\"imgLink\" class=\"thumbnail\">\n  </div>\n  "
+        template: "\n  <div [class.col-sm-4]=\"custom\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n    <authors></authors>\n  </div>\n  \n  <div class=\"col-sm-6\" style=\"margin-top:12%;\">\n    <img [src]=\"imgLink\" class=\"thumbnail\">\n  </div>\n  ",
+        styles: [".col-sm-4{background-color:#F5EFEF; margin-top:5%;}"]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

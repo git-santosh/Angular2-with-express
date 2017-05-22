@@ -2,11 +2,11 @@ import { Component } from "@angular/core";
 import { CourseService } from "./course.service";
 @Component({
     selector:'courses',
-    template : `<div class="container">
+    template : `
         <div class="row">
        
             
-            <div class="col-sm-2">
+            <div class="col-md-6">
             {{title}}
                  <h2>Course </h2>
                  <ul class="list-group">
@@ -14,7 +14,7 @@ import { CourseService } from "./course.service";
                  </ul>
             </div>    
         </div> 
-    </div>`,
+    `,
     styles:[`h2{ color:red;`],
     providers:[CourseService]
 })

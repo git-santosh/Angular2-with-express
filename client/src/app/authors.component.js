@@ -19,7 +19,7 @@ var AuthorsComponent = (function () {
 AuthorsComponent = __decorate([
     core_1.Component({
         selector: 'authors',
-        template: "\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-sm-2\">\n                 <h2>Authors </h2>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let author of authors\"> {{author}} </li>\n                 </ul>\n            </div>\n           \n                  \n               \n               \n        </div> \n    </div>",
+        template: "\n    \n        <div class=\"row\">\n            <div class=\"col-md-6\">\n                 <h2>Authors </h2>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let author of authors\"> {{author}} </li>\n                 </ul>\n            </div>    \n        </div> \n    ",
         styles: ["h2{ color:orange;}"],
         providers: [author_service_1.AuthorService]
     }),
