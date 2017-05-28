@@ -23,13 +23,20 @@ var AuthorsComponent = (function () {
             text: this.addAuthor
         });
     };
+    AuthorsComponent.prototype.deleteAuthor = function (deleteText) {
+        for (var i = 0; i < this.authors.length; i++) {
+            if (this.authors[i].text == deleteText) {
+                this.authors.splice(i, 1);
+            }
+        }
+    };
     return AuthorsComponent;
 }());
 AuthorsComponent = __decorate([
     core_1.Component({
         selector: 'authors',
-        template: "\n    \n        <div class=\"row\">\n            <div class=\"col-md-6\">\n                 <h2>Authors </h2>\n                 <form (submit) = \"addAuthors()\">\n                    <div class=\"form-group\">\n                        <input type =\"text\" class=\"form-control\" [(ngModel)]=\"addAuthor\" name=\"addAuthor\" placeholder=\"Add Author hear\">\n                    </div>        \n                 </form>   \n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let author of authors\"> {{author.text}} </li>\n                 </ul>\n            </div>    \n        </div> \n    ",
-        styles: ["h2{ color:orange;}"],
+        template: "\n    \n        <div class=\"row\">\n            <div class=\"col-md-6\">\n                 <h2>Authors </h2>\n                 <form (submit) = \"addAuthors()\">\n                    <div class=\"form-group\">\n                        <input type =\"text\" class=\"form-control\" [(ngModel)]=\"addAuthor\" name=\"addAuthor\" placeholder=\"Add Author hear\">\n                    </div>        \n                 </form>   \n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let author of authors\"> {{author.text}} <button (click)=\"deleteAuthor(author.text)\" class=\"rightAlign\">X</button></li>\n                 </ul>\n            </div>    \n        </div> \n    ",
+        styles: ["h2{ color:orange;}", ".rightAlign{ float:right}"],
         providers: [author_service_1.AuthorService]
     }),
     __metadata("design:paramtypes", [author_service_1.AuthorService])

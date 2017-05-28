@@ -24,13 +24,20 @@ var CoursesComponent = (function () {
             text: this.addCourse
         });
     };
+    CoursesComponent.prototype.deleteCourese = function (deletetext) {
+        for (var i = 0; i < this.courses.length; i++) {
+            if (this.courses[i].text == deletetext) {
+                this.courses.splice(i, 1);
+            }
+        }
+    };
     return CoursesComponent;
 }());
 CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
-        template: "\n        <div class=\"row\">\n       \n            \n            <div class=\"col-md-6\">\n            {{title}}\n                 <h2>Course </h2>\n                 <form (submit) = \"addCourses()\">\n                    <div class=\"form-group\" >\n                        <input type=\"text\" class=\"form-control\" [(ngModel)] = \"addCourse\" name=\"addCourse\" placeholder=\"Add Course hear\">\n                    </div>\n                 </form>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let course of courses\"> {{course.text}} </li>\n                 </ul>\n            </div>    \n        </div> \n    ",
-        styles: ["h2{ color:red;"],
+        template: "\n        <div class=\"row\">\n       \n            \n            <div class=\"col-md-6\">\n            {{title}}\n                 <h2>Course </h2>\n                 <form (submit) = \"addCourses()\">\n                    <div class=\"form-group\" >\n                        <input type=\"text\" class=\"form-control\" [(ngModel)] = \"addCourse\" name=\"addCourse\" placeholder=\"Add Course hear\">\n                    </div>\n                 </form>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let course of courses\"> {{course.text}} <button (click)=\"deleteCourese(course.text)\" class=\"rightAlign\">X</button></li> \n                 </ul>\n            </div>    \n        </div> \n    ",
+        styles: ["h2{ color:red;", ".rightAlign{ float:right}"],
         providers: [course_service_1.CourseService]
     }),
     __metadata("design:paramtypes", [course_service_1.CourseService])

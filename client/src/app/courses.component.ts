@@ -15,12 +15,12 @@ import { CourseService } from "./course.service";
                     </div>
                  </form>
                  <ul class="list-group">
-                    <li class="list-group-item" *ngFor="let course of courses"> {{course.text}} </li>
+                    <li class="list-group-item" *ngFor="let course of courses"> {{course.text}} <button (click)="deleteCourese(course.text)" class="rightAlign">X</button></li> 
                  </ul>
             </div>    
         </div> 
     `,
-    styles:[`h2{ color:red;`],
+    styles:[`h2{ color:red;`,`.rightAlign{ float:right}`],
     providers:[CourseService]
 })
 export class CoursesComponent implements OnInit{
@@ -38,5 +38,12 @@ export class CoursesComponent implements OnInit{
         this.courses.push({
             text:this.addCourse
         });
+    }
+    deleteCourese(deletetext){
+        for(var i=0; i<this.courses.length; i++){
+            if(this.courses[i].text == deletetext){
+                this.courses.splice(i,1);
+            }
+        }
     }
 }

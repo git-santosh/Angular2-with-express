@@ -13,12 +13,12 @@ import { AuthorService } from "./author.service";
                     </div>        
                  </form>   
                  <ul class="list-group">
-                    <li class="list-group-item" *ngFor="let author of authors"> {{author.text}} </li>
+                    <li class="list-group-item" *ngFor="let author of authors"> {{author.text}} <button (click)="deleteAuthor(author.text)" class="rightAlign">X</button></li>
                  </ul>
             </div>    
         </div> 
     `,
-    styles:[`h2{ color:orange;}`],
+    styles:[`h2{ color:orange;}`, `.rightAlign{ float:right}`],
     providers :[AuthorService]
 })
 export class AuthorsComponent implements OnInit{
@@ -37,5 +37,12 @@ export class AuthorsComponent implements OnInit{
                 text : this.addAuthor
             }
             );
+    }
+    deleteAuthor(deleteText){
+        for(var i=0; i< this.authors.length; i++){
+            if(this.authors[i].text == deleteText){
+                this.authors.splice(i,1);
+            }
+        }
     }
 }
