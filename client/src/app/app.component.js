@@ -9,7 +9,7 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.name = 'Angular';
-        //public imgLink ="http://lorempixel.com/700/310";
+        this.imgLink = "http://lorempixel.com/700/310";
         this.custom = true;
     }
     AppComponent.prototype.onHover = function (value) {
@@ -24,7 +24,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <div [class.col-md-4]=\"custom\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n    <authors></authors>\n  </div>\n  \n  <div class=\"col-sm-6\" style=\"margin-top:12%;\">\n    <img [src]=\"imgLink\" class=\"thumbnail\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Random Image\" (mouseover)=\"onHover($event)\">\n  </div>\n  ",
+        template: "\n  <div [class.col-md-4]=\"custom\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n    <authors></authors>\n  </div>\n  \n  <div class=\"col-sm-6\" style=\"margin-top:12%;\">\n    <img [src]=\"imgLink\" class=\"thumbnail\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Random Image\" (mouseover)=\"onHover($event)\"><br>\n  </div>\n  ",
         styles: [".col-sm-4{background-color:#F5EFEF; margin-top:5%;}"]
     })
 ], AppComponent);
