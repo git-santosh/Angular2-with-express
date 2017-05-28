@@ -1,6 +1,6 @@
 
 export class CourseService {
-    getCourses() : string []{ //explicitly write return type like getCourses() : string [] {}
-        return ["course1","course2","course3"];
-    }
+    getCourses(){ //explicitly write return type like getCourses() : string [] {}
+        return [ { text:'course 1'} , { text :'course 2'} ,{text : 'course 3'}];
+    
 }

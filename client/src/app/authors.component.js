@@ -12,14 +12,23 @@ var core_1 = require("@angular/core");
 var author_service_1 = require("./author.service");
 var AuthorsComponent = (function () {
     function AuthorsComponent(authorService) {
-        this.authors = authorService.getAuthors();
+        this.authorService = authorService;
+        //this.authors = authorService.getAuthors();
     }
+    AuthorsComponent.prototype.ngOnInit = function () {
+        this.authors = this.authorService.getAuthors();
+    };
+    AuthorsComponent.prototype.addAuthors = function () {
+        this.authors.push({
+            text: this.addAuthor
+        });
+    };
     return AuthorsComponent;
 }());
 AuthorsComponent = __decorate([
     core_1.Component({
         selector: 'authors',
-        template: "\n    \n        <div class=\"row\">\n            <div class=\"col-md-6\">\n                 <h2>Authors </h2>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let author of authors\"> {{author}} </li>\n                 </ul>\n            </div>    \n        </div> \n    ",
+        template: "\n    \n        <div class=\"row\">\n            <div class=\"col-md-6\">\n                 <h2>Authors </h2>\n                 <form (submit) = \"addAuthors()\">\n                    <div class=\"form-group\">\n                        <input type =\"text\" class=\"form-control\" [(ngModel)]=\"addAuthor\" name=\"addAuthor\" placeholder=\"Add Author hear\">\n                    </div>        \n                 </form>   \n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let author of authors\"> {{author.text}} </li>\n                 </ul>\n            </div>    \n        </div> \n    ",
         styles: ["h2{ color:orange;}"],
         providers: [author_service_1.AuthorService]
     }),

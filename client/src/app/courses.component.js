@@ -12,15 +12,24 @@ var core_1 = require("@angular/core");
 var course_service_1 = require("./course.service");
 var CoursesComponent = (function () {
     function CoursesComponent(courseService) {
+        this.courseService = courseService;
         this.title = 'This is the page title';
-        this.courses = courseService.getCourses();
     }
+    CoursesComponent.prototype.ngOnInit = function () {
+        this.courses = this.courseService.getCourses();
+    };
+    CoursesComponent.prototype.addCourses = function () {
+        console.log(this.addCourse);
+        this.courses.push({
+            text: this.addCourse
+        });
+    };
     return CoursesComponent;
 }());
 CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
-        template: "\n        <div class=\"row\">\n       \n            \n            <div class=\"col-md-6\">\n            {{title}}\n                 <h2>Course </h2>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let course of courses\"> {{course}} </li>\n                 </ul>\n            </div>    \n        </div> \n    ",
+        template: "\n        <div class=\"row\">\n       \n            \n            <div class=\"col-md-6\">\n            {{title}}\n                 <h2>Course </h2>\n                 <form (submit) = \"addCourses()\">\n                    <div class=\"form-group\" >\n                        <input type=\"text\" class=\"form-control\" [(ngModel)] = \"addCourse\" name=\"addCourse\" placeholder=\"Add Course hear\">\n                    </div>\n                 </form>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let course of courses\"> {{course.text}} </li>\n                 </ul>\n            </div>    \n        </div> \n    ",
         styles: ["h2{ color:red;"],
         providers: [course_service_1.CourseService]
     }),
