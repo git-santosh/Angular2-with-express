@@ -4,6 +4,7 @@ declare var $:JQueryStatic;
 @Component({
   selector: 'my-app',
   template: `
+  <router-outlet></router-outlet>
   <div [class.col-md-4]="custom">
     <h1>Hello {{name}}</h1>
     <courses></courses> 
@@ -13,6 +14,7 @@ declare var $:JQueryStatic;
   <div class="col-sm-6" style="margin-top:12%;">
     <img [src]="imgLink" class="thumbnail" data-toggle="tooltip" data-placement="top" title="Random Image" (mouseover)="onHover($event)"><br>
   </div>
+  
   `,
   styles:[`.col-sm-4{background-color:#F5EFEF; margin-top:5%;}`]
 })

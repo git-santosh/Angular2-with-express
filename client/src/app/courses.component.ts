@@ -4,8 +4,6 @@ import { CourseService } from "./course.service";
     selector:'courses',
     template : `
         <div class="row">
-       
-            
             <div class="col-md-6">
             {{title}}
                  <h2>Course </h2>

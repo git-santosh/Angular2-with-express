@@ -24,7 +24,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <div [class.col-md-4]=\"custom\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n    <authors></authors>\n  </div>\n  \n  <div class=\"col-sm-6\" style=\"margin-top:12%;\">\n    <img [src]=\"imgLink\" class=\"thumbnail\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Random Image\" (mouseover)=\"onHover($event)\"><br>\n  </div>\n  ",
+        template: "\n  <router-outlet></router-outlet>\n  <div [class.col-md-4]=\"custom\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n    <authors></authors>\n  </div>\n  \n  <div class=\"col-sm-6\" style=\"margin-top:12%;\">\n    <img [src]=\"imgLink\" class=\"thumbnail\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Random Image\" (mouseover)=\"onHover($event)\"><br>\n  </div>\n  \n  ",
         styles: [".col-sm-4{background-color:#F5EFEF; margin-top:5%;}"]
     })
 ], AppComponent);
