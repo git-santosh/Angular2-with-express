@@ -4,7 +4,7 @@ declare var $:JQueryStatic;
 @Component({
   selector: 'my-app',
   template: `
-  <router-outlet></router-outlet>
+ <router-outlet></router-outlet>
   <div [class.col-md-4]="custom">
     <h1>Hello {{name}}</h1>
     <courses></courses> 

@@ -9,12 +9,20 @@ var core_1 = require("@angular/core");
 var EmpCreateComponent = (function () {
     function EmpCreateComponent() {
     }
+    EmpCreateComponent.prototype.EmpCreateComponent = function () {
+    };
+    EmpCreateComponent.prototype.onSubmit = function (values) {
+        console.log(values);
+    };
+    EmpCreateComponent.prototype.ngOnInit = function () {
+    };
     return EmpCreateComponent;
 }());
 EmpCreateComponent = __decorate([
     core_1.Component({
         selector: 'empCreate',
-        templateUrl: 'App/empCreate.component.html'
+        templateUrl: 'App/empCreate.component.html',
+        styles: ["input.ng-invalid{border-left:5px solid red;} input.ng-valid{border-left:5px solid green;}"]
     })
 ], EmpCreateComponent);
 exports.EmpCreateComponent = EmpCreateComponent;

@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router";
+import {TooltipModule} from "ngx-tooltip";
 import * as $ from 'jquery';
 import { AppComponent }  from './app.component';
 import { CoursesComponent } from './courses.component';
@@ -9,7 +10,7 @@ import { AuthorsComponent } from './authors.component';
 import { EmpCreateComponent } from './empCreate.component';
 import { EmployeeListComponent } from './employeeList.component';
 @NgModule({
-  imports:      [ BrowserModule , FormsModule , RouterModule.forRoot([
+  imports:      [ BrowserModule , FormsModule , TooltipModule , RouterModule.forRoot([
     {path:'employees',component:EmployeeListComponent},
     {path:'create', component:EmpCreateComponent }
     ]) ],
