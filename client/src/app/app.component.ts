@@ -10,9 +10,13 @@ declare var $:JQueryStatic;
     <courses></courses> 
     <authors></authors>
   </div>
-  
+    
   <div class="col-sm-6" style="margin-top:12%;">
-    <img [src]="imgLink" class="thumbnail" data-toggle="tooltip" data-placement="top" title="Random Image" (mouseover)="onHover($event)"><br>
+      <tooltip-content  #ImageName [animation]="true" placement="right">
+       <span style="color: #C21F80">This is a sample Image</span>
+    </tooltip-content>
+    <img [src]="imgLink" class="thumbnail" [tooltip]="ImageName"><br>
+
   </div>
   
   `,

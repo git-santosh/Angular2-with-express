@@ -13,24 +13,25 @@
                             <label for="id_firstName" class="control-label col-md-4  requiredField">First Name <span class="asteriskField">*</span></label>
                             
                              <div class="controls col-md-8 ">
-                                <input #fNameRef="ngModel" [tooltip]="fName" required class="input-md  textinput textInput form-control" [(ngModel)] ="firstName"  name="firstName" placeholder="Enter Frst Name" style="margin-bottom: 10px" type="text" />
-                                <!--<b>{{fNameRef.ClassName}}</b>-->
-                                <!--<div [hidden]="fNameRef.valid || fNameRef.pristine" class="alert alert-danger">
-                                    please enter a name 
-                                </div>-->
-                                 <tooltip-content  #fName [animation]="true" placement="right">
-                                    <span style="color: #C21F39">please enter a first name </span>
-                                </tooltip-content>
+                                <input #fNameRef="ngModel" minlength="7" maxlength="15" required class="input-md  textinput textInput form-control" [(ngModel)] ="firstName"  name="firstName" placeholder="Enter Frst Name" style="margin-bottom: 10px" type="text" />
+                                <b>{{fNameRef.className}}</b>
+                                <div *ngIf="fNameRef.errors && (fNameRef.dirty || fNameRef.touched)" class="alert alert-danger">
+                                    <div [hidden]="!fNameRef.errors.required" >
+                                        please enter a name 
+                                    </div>
+                                    <div [hidden]="!fNameRef.errors.minlength" >
+                                        please enter at least 7 characters
+                                    </div>
+                                </div>
+                                
                             </div>
                            
                         </div>  
                            <div id=" div_id_lastName" class="form-group required">
                             <label for="id_lastName" class="control-label col-md-4  requiredField">Last Name <span class="asteriskField">*</span></label>
                              <div class="controls col-md-8 ">
-                                <input  required [tooltip]="lName" class="input-md  textinput textInput form-control"  [(ngModel)] ="lastName" name="lastName" placeholder="Enter Last Name" style="margin-bottom: 10px" type="text" />
-                                  <tooltip-content  #lName [animation]="true" placement="right">
-                                    <span style="color: #C21F39">please enter a last name </span>
-                                  </tooltip-content>
+                                <input  required class="input-md  textinput textInput form-control"  [(ngModel)] ="lastName" name="lastName" placeholder="Enter Last Name" style="margin-bottom: 10px" type="text" />
+                                
                             </div>
                         </div>
                          <div id="div_id_name" class="form-group required"> 
@@ -80,14 +81,31 @@
                         <div id="div_id_number" class="form-group required">
                              <label for="id_number" class="control-label col-md-4  requiredField"> contact number<span class="asteriskField">*</span> </label>
                              <div class="controls col-md-8 ">
-                                 <input ngModel class="input-md textinput textInput form-control"  name="number" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
+                                 <input #contact="ngModel" ngModel pattern="^[0-9]{10}$" required class="input-md textinput textInput form-control"  name="number" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
                             </div> 
+                            
                         </div> 
+                        <div *ngIf="contact.errors && (contact.dirty || contact.touched)" class="alert alert-danger">
+                                    <div [hidden]="!contact.errors.required" >
+                                        please enter a Phone Number 
+                                    </div>
+                                    <div [hidden]="!contact.errors.pattern" >
+                                        please enter at least 10 digits mobile Numner
+                                    </div>
+                        </div>
                         <div id="div_id_location" class="form-group required">
-                            <label for="id_location" class="control-label col-md-4  requiredField"> Your Location </label>
+                            <label for="id_location" class="control-label col-md-4  requiredField">Pincode </label>
                             <div class="controls col-md-8 ">
-                                <input ngModel class="input-md textinput textInput form-control"  name="location" placeholder="Your Pincode and City" style="margin-bottom: 10px" type="text" />
+                                <input #postalCode="ngModel" ngModel required pattern="^[0-9][0-9]{4}$" class="input-md textinput textInput form-control"  name="location" placeholder="Your Pincode and City" style="margin-bottom: 10px" type="text" />
                             </div> 
+                        </div>
+                        <div *ngIf="postalCode.errors && (postalCode.dirty || postalCode.touched)" class="alert alert-danger">
+                                    <div [hidden]="!postalCode.errors.required" >
+                                        please enter a Phone Number 
+                                    </div>
+                                    <div [hidden]="!postalCode.errors.pattern" >
+                                        please enter at 5 Digit Number
+                                    </div>
                         </div>
                         <div class="form-group"> 
                             <div class="aab controls col-md-4 "></div>
