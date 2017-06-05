@@ -24,7 +24,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n <router-outlet></router-outlet>\n  <div [class.col-md-4]=\"custom\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n    <authors></authors>\n  </div>\n    \n  <div class=\"col-sm-6\" style=\"margin-top:12%;\">\n      <tooltip-content  #ImageName [animation]=\"true\" placement=\"right\">\n       <span style=\"color: #C21F80\">This is a sample Image</span>\n    </tooltip-content>\n    <img [src]=\"imgLink\" class=\"thumbnail\" [tooltip]=\"ImageName\"><br>\n\n  </div>\n  \n  ",
+        template: "\n <router-outlet></router-outlet>\n  <div [class.col-sm-4]=\"custom\">\n    <h1>Hello {{name}}</h1>\n    <courses></courses> \n  </div>\n    \n  <div class=\"col-sm-6\" style=\"margin-top:12%;\">\n      <tooltip-content  #ImageName [animation]=\"true\" placement=\"right\">\n       <span style=\"color: #C21F80\">This is a sample Image</span>\n    </tooltip-content>\n    <img [src]=\"imgLink\" class=\"thumbnail\" [tooltip]=\"ImageName\"><br>\n\n  </div>\n  \n  ",
         styles: [".col-sm-4{background-color:#F5EFEF; margin-top:5%;}"]
     })
 ], AppComponent);

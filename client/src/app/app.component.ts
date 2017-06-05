@@ -5,10 +5,9 @@ declare var $:JQueryStatic;
   selector: 'my-app',
   template: `
  <router-outlet></router-outlet>
-  <div [class.col-md-4]="custom">
+  <div [class.col-sm-4]="custom">
     <h1>Hello {{name}}</h1>
     <courses></courses> 
-    <authors></authors>
   </div>
     
   <div class="col-sm-6" style="margin-top:12%;">

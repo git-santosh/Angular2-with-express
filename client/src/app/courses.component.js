@@ -36,8 +36,8 @@ var CoursesComponent = (function () {
 CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
-        template: "\n        <div class=\"row\">\n            <div class=\"col-md-6\">\n            {{title}}\n                 <h2>Course </h2>\n                 <form (submit) = \"addCourses()\">\n                    <div class=\"form-group\" >\n                        <input type=\"text\" class=\"form-control\" [(ngModel)] = \"addCourse\" name=\"addCourse\" placeholder=\"Add Course hear\">\n                    </div>\n                 </form>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let course of courses\"> {{course.text}} <button (click)=\"deleteCourese(course.text)\" class=\"rightAlign\">X</button></li> \n                 </ul>\n            </div>    \n        </div> \n    ",
-        styles: ["h2{ color:red;", ".rightAlign{ float:right}"],
+        template: "\n        <div class=\"row\">\n            <div class=\"col-sm-5\">\n                 <h2>Course </h2>\n                 <form (submit) = \"addCourses()\">\n                    <div class=\"form-group\" >\n                        <input type=\"text\" class=\"form-control\" #pText (keyup)=\"0\"  [(ngModel)] = \"addCourse\" name=\"addCourse\" placeholder=\"Add Course hear\">\n                    </div>\n                 </form>\n                 <ul class=\"list-group\">\n                    <li class=\"list-group-item\" *ngFor=\"let course of courses\"> {{course.text}} <button (click)=\"deleteCourese(course.text)\" class=\"rightAlign\">X</button></li> \n                 </ul>\n            </div>   \n            <authors [courseData]=\"pText.value\"></authors>  \n        </div> \n    ",
+        styles: ["h2{ color:red; ", ".rightAlign{ float:right}", ".col-sm-5{background-color:#FEE555;}"],
         providers: [course_service_1.CourseService]
     }),
     __metadata("design:paramtypes", [course_service_1.CourseService])
